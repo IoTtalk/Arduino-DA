@@ -1,6 +1,6 @@
 import DAN
 
-ServerIP = '140.113.199.199'   #=None:AutoSearch, or ='IP':Connect to this IP
+ServerIP = 'IP'   #=None:AutoSearch, or ='IP':Connect to this IP
 
 def profile_init():
     DAN.profile['dm_name']='Lamp'
