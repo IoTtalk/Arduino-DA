@@ -25,7 +25,9 @@ for f_name in DAN.profile['df_list']:
     print('    {}'.format(f_name))
 
 DAN.device_registration_with_retry(custom.ServerIP)
-os.system(r'echo "heartbeat" > /sys/class/leds/ds:green:usb/trigger')
+#os.system(r'echo "heartbeat" > /sys/class/leds/ds:green:usb/trigger')   #For ArduinoYun Only, need to install packages. "opkg install kmod-ledtrig-heartbeat"
+#os.system(r'echo "default-on" > /sys/class/leds/ds:green:usb/trigger') #For ArduinoYun Only. LED constant ON.
+os.system(r'echo "timer" > /sys/class/leds/ds:green:usb/trigger')      #For ArduinoYun Only. LED Blink.
 client.put('Reg_done', '1')
 
 incomming = {}
@@ -90,7 +92,7 @@ while True:
         client.put('Reg_done', '0')
         os.system(r'echo "none" > /sys/class/leds/ds:green:usb/trigger')
         DAN.device_registration_with_retry(custom.ServerIP)
-        os.system(r'echo "heartbeat" > /sys/class/leds/ds:green:usb/trigger')
+	os.system(r'echo "timer" > /sys/class/leds/ds:green:usb/trigger')
         client.put('Reg_done', '1')
     
     time.sleep(custom.Comm_interval)
