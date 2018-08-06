@@ -2,10 +2,17 @@
 
 注意事項：
 
-在Arduino端，用以判別是不是新進來的ODF value的變數 incomming_ODFname，其用以存放的字串陣列長度，必須為10 bytes。
-For example:  char incomming[10]={'\0'};
+Arduino那邊取完ODF數值後，要會回填 "" 到DF去覆蓋。  每次檢查ODF字串若為 "" 則表示數值沒更新。
 
-而從Bridge中取回incomming_ODFname時，也要定義取出長度為10 bytes
-For example:  Bridge.get("incomming_ODFname",  incomming, 10);
+For example  (Arduino的取資料端範例)
 
-這是因為用起判定是否為新資料的變數incomming_ODFname，是一個序列數字介於 0~10000，序列數字不同時，代表ODFname內有新資料需取回。
+    Bridge.get(StrBuf,  valueStr, 3);
+    
+    if (strcmp(valueStr,"") != 0){
+     
+        
+        //邏輯程式碼....
+
+
+        Bridge.put(StrBuf, "");  //<--- 做完後，要回填 "" 覆蓋。
+    }
