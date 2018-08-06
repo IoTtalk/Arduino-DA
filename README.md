@@ -6,7 +6,7 @@ Arduino那邊取完ODF數值後，要會回填 "" 到DF去覆蓋。  每次檢�
 
 For example  (Arduino的取資料端範例)
 
-    Bridge.get(StrBuf,  valueStr, 3);
+    Bridge.get(ODF_name,  valueStr, 3);
     
     if (strcmp(valueStr,"") != 0){
      
@@ -14,5 +14,5 @@ For example  (Arduino的取資料端範例)
         //邏輯程式碼....
 
 
-        Bridge.put(StrBuf, "");  //<--- 做完後，要回填 "" 覆蓋。
+        Bridge.put(ODF_name, "");  //<--- 做完後，要回填 "" 覆蓋。
     }
