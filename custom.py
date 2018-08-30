@@ -24,7 +24,7 @@ def odf():  # int only
 
 def idf():
     return [
-       #('A0', int),
+       ('Humidity', int),
        #('A1', int),
        #('A2', int),
        #('A3', int),
