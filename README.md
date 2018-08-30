@@ -1,5 +1,7 @@
 # Arduino-da
 
+2018.8.30: 加入SSL通訊、Device認證程序
+
 注意事項：
 
 Arduino那邊取完ODF在bridge的數值後，要會回填 "" 到ODF對應的bridge去覆蓋。  是以之後每次檢查bridge中ODF字串值若為 "" 則表示數值沒更新。
