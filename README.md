@@ -20,7 +20,7 @@ For example  (Arduino的取資料端範例)
     }
 
 
-在AR9331上面的OpenWRT上安裝Python套件 requests 的指令(依序)
+針對 ArduinoYun (第一版)，在OpenWRT上安裝Python套件 requests 的指令(依序) (使用Yun第一版前，需要把韌體刷到1.5.3版)
 
 
     opkg update                 #updates the available packages list
@@ -34,3 +34,13 @@ For example  (Arduino的取資料端範例)
     pip install requests
 
     opkg install openssh-sftp-server
+
+針對 ArduinoYun Rev2，在OpenWRT上安裝Python套件 requests 的指令(依序) (Rev2拿到後直接可以使用，無須刷韌體)
+
+    opkg update
+    
+    opkg install openssh-sftp-server
+    
+    opkg install python-pip
+    
+    pip install requests    (重開機後再執行，不然很容易記憶體不足而發生 Memory error)
