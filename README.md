@@ -40,6 +40,7 @@ For example  (Arduino的取資料端範例)
     opkg update
     opkg install python-pip
     pip install requests    (斷電重開機後執行，不然一定會發生記憶體不足 Memory error)
+    opkg update
     opkg install openssh-sftp-server
 
     註：上述順序不可改。 如果裝requests時一直發生memory error記憶體不足，
