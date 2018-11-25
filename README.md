@@ -37,10 +37,13 @@ For example  (Arduino的取資料端範例)
 
 針對 ArduinoYun Rev2，在OpenWRT上安裝Python套件 requests 的指令(依序) (Rev2拿到後直接可以使用，無須刷韌體)
 
+    For Rev2:
     opkg update
-    
-    opkg install openssh-sftp-server
-    
     opkg install python-pip
-    
-    pip install requests    (重開機後再執行，不然很容易記憶體不足而發生 Memory error)
+    pip install requests    (斷電重開機後執行，不然一定會發生記憶體不足 Memory error)
+    opkg install openssh-sftp-server
+
+    註：上述順序不可改。 如果裝requests時一直發生memory error記憶體不足，
+    可試著手動依序安裝 idna, urllib3, chardet, certifi, requests 
+    一旦遭遇記憶體不足就斷電重開機後執行後再繼續裝，
+    如果怎樣都裝不起來，只能Factory reset後再試試看。
