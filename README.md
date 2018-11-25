@@ -37,7 +37,6 @@ For example  (Arduino的取資料端範例)
 
 針對 ArduinoYun Rev2，在OpenWRT上安裝Python套件 requests 的指令(依序) (Rev2拿到後直接可以使用，無須刷韌體)
 
-    For Rev2:
     opkg update
     opkg install python-pip
     pip install requests    (斷電重開機後執行，不然一定會發生記憶體不足 Memory error)
