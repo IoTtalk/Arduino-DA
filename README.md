@@ -48,4 +48,4 @@ For example  (Arduino的取資料端範例)
         解法就是：用top看process，先把bridge砍掉，kill <bridge的pid>，然後再看有哪些service，
         下service指令後，看有哪些項目，用 "service 項目 stop" 去停止，停了幾個後，
         直接下 pip install requests 就可以裝成功了，若是還失敗，繼續停掉service，
-        kill掉一些不重要的process，約 35868K free 記憶體時，就可以安裝裝成功。
+        kill掉一些不重要的process，約 35868K free 記憶體時，就可以安裝成功。
