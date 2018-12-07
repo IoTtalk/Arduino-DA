@@ -39,11 +39,9 @@ For example  (Arduino的取資料端範例)
 
     opkg update
     opkg install python-pip
-    pip install requests    (斷電重開機後執行，不然一定會發生記憶體不足 Memory error)
+    pip install requests    (***注意，看註1***)
     opkg update
     opkg install openssh-sftp-server
 
-    註：上述順序不可改。 如果裝requests時一直發生memory error記憶體不足，
-    可試著手動依序安裝 idna, urllib3, chardet, certifi, requests 
-    一旦遭遇記憶體不足就斷電重開機後執行後再繼續裝，
-    如果怎樣都裝不起來，只能Factory reset後再試試看。
+    註1：
+        若遭遇Memoey不夠的問題(看到Killed, non mem,等安裝失敗等都是記憶體不足之故)，解法就是：用top看process，先把bridge砍掉，kill <bridge的      pid>，然後再看有哪些service，下service指令後，看有哪些項目，用 "service 項目 stop" 去停止，停了幾個後，直接下 pip install requests 就可以裝成功了，若是還失敗，繼續停掉service，kill掉一些不重要的process，約 35868K free 記憶體時，就可以安裝裝成功。
