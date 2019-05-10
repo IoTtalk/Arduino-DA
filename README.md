@@ -37,12 +37,11 @@ For example  (Arduino的取資料端範例)
 
 針對 ArduinoYun Rev2，在OpenWRT上安裝Python套件 requests 的指令(依序) (Rev2拿到後直接可以使用，無須刷韌體)
 
+    opkg update 
+    opkg install python-pip 
     wget http://yun.iottalk.tw/idna2.8.tar.gz
     tar zxvf idna2.8.tar.gz
     cd idna-master
     python setup.py install
-    cd ..
-    opkg update 
-    opkg install python-pip 
     pip install requests
     opkg install openssh-sftp-server
